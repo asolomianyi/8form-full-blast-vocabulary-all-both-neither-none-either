@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clothes: Vocabulary & Grammar</title>
+<style>
+:root{--bg:#f3f6fb;--card:#fff;--ink:#14233b;--mut:#5b6b85;--line:#d5deec;--acc:#1f6fd1;--accbg:#e4effd;--ok:#1d8a4e;--okbg:#e0f5e9;--bad:#c93a3a;--badbg:#fbe6e6;--hl:#fff3c4;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1829;--card:#18243a;--ink:#eaf0fb;--mut:#9fb0cb;--line:#2c3c58;--acc:#6aa8f5;--accbg:#1c3358;--ok:#5fd592;--okbg:#17372a;--bad:#f28a8a;--badbg:#401f24;--hl:#4a4020}}
+:root[data-theme="dark"]{--bg:#0f1829;--card:#18243a;--ink:#eaf0fb;--mut:#9fb0cb;--line:#2c3c58;--acc:#6aa8f5;--accbg:#1c3358;--ok:#5fd592;--okbg:#17372a;--bad:#f28a8a;--badbg:#401f24;--hl:#4a4020}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.5 "Trebuchet MS","Segoe UI",system-ui,sans-serif}
+main{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.7rem;margin:.2em 0 .1em}h2{font-size:1.3rem;margin:.2em 0 .5em}
+p.sub{color:var(--mut);margin:0 0 14px}
+small.uk{display:block;font-size:.68em;line-height:1.2;color:var(--mut);font-weight:400}
+nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+nav button{flex:1 1 auto;border:2px solid var(--line);background:var(--card);color:var(--ink);padding:9px 10px;border-radius:12px;font:inherit;font-weight:700;cursor:pointer}
+nav button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+section{display:none;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+section.on{display:block}
+button:focus-visible,input:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.btn{background:var(--acc);color:#fff;border:0;border-radius:12px;padding:10px 18px;font:inherit;font-weight:700;cursor:pointer}
+.btn.alt{background:var(--accbg);color:var(--acc)}
+.bar{display:flex;justify-content:space-between;align-items:center;margin:12px 0 0;color:var(--mut);gap:10px;flex-wrap:wrap}
+.tile{border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:7px 14px;font:inherit;cursor:pointer}
+.tile:hover{border-color:var(--acc)}.tile.done{background:var(--okbg);border-color:var(--ok);color:var(--ok);cursor:default}.tile.no{background:var(--badbg);border-color:var(--bad)}
+.q{padding:14px 0;border-bottom:1px solid var(--line)}.q:last-child{border:0}.q .t{margin-bottom:8px}
+.opts{display:flex;gap:8px;flex-wrap:wrap}
+.fb{font-size:.95rem;margin-top:6px;min-height:1.2em}.fb.ok{color:var(--ok)}.fb.bad{color:var(--bad)}
+input.gap{font:inherit;width:8.5em;padding:5px 8px;border:2px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);text-align:center}
+input.gap.ok{border-color:var(--ok);background:var(--okbg)}input.gap.bad{border-color:var(--bad);background:var(--badbg)}
+/* crossword */
+#xw{display:grid;gap:2px;max-width:400px;margin:6px auto 14px}
+.cell{position:relative;aspect-ratio:1}
+.cell input{width:100%;height:100%;border:2px solid var(--ink);border-radius:4px;background:var(--card);color:var(--ink);text-align:center;font-weight:700;font-size:16px;font-family:inherit;padding:6px 0 0;text-transform:uppercase;caret-color:transparent}
+.cell input.hl{background:var(--hl)}.cell input.cur{background:var(--accbg);border-color:var(--acc)}
+.cell input.ok{background:var(--okbg);border-color:var(--ok)}.cell input.bad{background:var(--badbg);border-color:var(--bad)}
+.cell b{position:absolute;left:3px;top:1px;font-size:.55rem;color:var(--mut);pointer-events:none}
+.clues{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.clues{grid-template-columns:1fr}}
+.clues h3{margin:0 0 6px;font-size:1rem}
+.clues ul{list-style:none;margin:0;padding:0}
+.clues li{padding:6px 8px;border-radius:8px;cursor:pointer;font-size:.95rem}
+.clues li:hover,.clues li.act{background:var(--hl)}
+.clues li.done{color:var(--ok)}.clues li.done .cl{text-decoration:line-through}
+/* builder */
+.shop{background:var(--accbg);border-radius:14px;padding:12px 16px;margin-bottom:8px;font-size:1.05rem}
+.shop .em{font-size:1.6rem;margin-right:8px}
+.build{min-height:62px;border:2px dashed var(--line);border-radius:12px;padding:8px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:8px 0}
+.build.ok{border-color:var(--ok);background:var(--okbg)}.build.bad{border-color:var(--bad);background:var(--badbg)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{background:var(--accbg);color:var(--ink);border:1px solid var(--acc);border-radius:14px;padding:5px 13px;font:inherit;cursor:pointer;text-align:center}
+.chip.used{opacity:.25;pointer-events:none}
+.rule{border-left:5px solid var(--acc);background:var(--accbg);padding:10px 14px;border-radius:0 12px 12px 0;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.95rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}th{background:var(--accbg)}
+em.ex{color:var(--mut)}
+.order{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0}.order span{background:var(--accbg);border-radius:8px;padding:4px 9px;font-size:.9rem}
+
+h3.h{margin:22px 0 4px;font-size:1.1rem;padding-left:10px;border-left:6px solid var(--acc)}
+.mx{display:grid;grid-template-columns:78px 1fr 1fr;gap:8px;margin:12px 0 8px}
+.mh{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;font-weight:700;font-size:.9rem}
+.mh span{font-size:1rem;letter-spacing:-2px}
+.w{border-radius:14px;padding:12px 8px;text-align:center;border:2px solid}
+.w b{font-size:1.35rem}
+.w.pos{background:var(--okbg);border-color:var(--ok);color:var(--ok)}
+.w.neg{background:var(--badbg);border-color:var(--bad);color:var(--bad)}
+.w.eit{background:var(--hl);border-color:#d9a400;color:var(--ink);margin-bottom:6px}
+.w small.uk{color:inherit;opacity:.85}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:10px 0}
+.st{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:10px 12px}
+.st i{display:inline-flex;width:28px;height:28px;border-radius:50%;background:var(--acc);color:#fff;font-style:normal;font-weight:700;align-items:center;justify-content:center;margin-right:6px}
+.eq{display:flex;gap:6px;flex-wrap:wrap;align-items:center;justify-content:center;margin:12px 0}
+.eq span,.ex2 span{border-radius:10px;padding:3px 10px;font-weight:700;display:inline-block}
+.k.pos{background:var(--okbg);color:var(--ok)}.k.neg{background:var(--badbg);color:var(--bad)}.k.eit{background:var(--hl);color:var(--ink)}
+.k.mix{background:linear-gradient(90deg,var(--okbg),var(--badbg));color:var(--ink)}
+.o{background:var(--line);color:var(--ink)}.g{background:var(--accbg);color:var(--acc)}.v{border:2px solid var(--mut);color:var(--ink);padding:1px 8px!important}
+.ex2{list-style:none;margin:8px 0;padding:0}
+.ex2 li{padding:10px 0;border-bottom:1px solid var(--line);font-size:1.05rem}
+.ex2 li:last-child{border:0}
+.ex2 span{font-weight:700}
+.legend{display:flex;gap:6px;flex-wrap:wrap;font-size:.8rem;margin:4px 0}
+.legend span{border-radius:8px;padding:2px 9px}
+.rule.warn{border-left-color:var(--bad);background:var(--badbg)}
+.rule.tip{border-left-color:#d9a400;background:var(--hl)}
+.ec{display:flex;gap:10px;border-left:6px solid var(--line);border-radius:12px;background:var(--bg);padding:10px 12px;margin:8px 0;align-items:flex-start}
+.ec.pos{border-color:var(--ok)}.ec.neg{border-color:var(--bad)}.ec.eit{border-color:#d9a400}
+.pic{font-size:1.3rem;min-width:62px;line-height:1.2;text-align:center;word-break:break-all}
+.sit{font-size:.85rem;color:var(--mut)}.sen{font-size:1.05rem;margin:3px 0}
+.sen span{border-radius:10px;padding:2px 8px;font-weight:700;display:inline-block}
+.why{font-size:.85rem;margin-top:4px;font-weight:700}
+h4.wh{margin:16px 0 2px;font-size:1.15rem;display:inline-block;border-radius:10px;padding:2px 14px}
+h4.wh.pos{background:var(--okbg);color:var(--ok)}h4.wh.neg{background:var(--badbg);color:var(--bad)}h4.wh.eit{background:var(--hl)}
+</style>
+</head>
+<body>
+<main>
+<h1>👕 Clothes: Vocabulary &amp; Grammar</h1>
+<p class="sub">Crossword, shop game, and all / both / neither / none / either</p>
+<nav id="nav">
+<button data-t="v1" class="on">Crossword</button><button data-t="v2">At the shop</button><button data-t="rule">Grammar rule</button><button data-t="g1">Practice A</button><button data-t="g2">Practice B</button>
+</nav>
+
+<section id="v1" class="on">
+<h2>Clothes crossword 🧩</h2>
+<p class="sub">Click a square and type letters (English or Ukrainian keyboard both work). Click the square again to switch between across and down.</p>
+<div id="xw"></div>
+<div class="bar"><span id="xInfo"></span><span><button class="btn alt" id="xHint">Hint</button> <button class="btn" id="xCheck">Check</button></span></div>
+<div class="clues" style="margin-top:14px"><div><h3>Across</h3><ul id="cA"></ul></div><div><h3>Down</h3><ul id="cD"></ul></div></div>
+</section>
+
+<section id="v2">
+<h2>At the shop 🛍️</h2>
+<p class="sub">Tap the words to build what the customer asks for.<small class="uk">Натискай слова, щоб скласти те, що просить покупець.</small></p>
+<div class="rule"><b>💡 Hint: adjective order</b><small class="uk">Підказка: порядок прикметників</small>
+<div class="order"><span>number<small class="uk">кількість</small></span><span>opinion<small class="uk">враження</small></span><span>colour<small class="uk">колір</small></span><span>design<small class="uk">візерунок</small></span><span>material<small class="uk">матеріал</small></span><span>noun<small class="uk">іменник</small></span></div>
+<em class="ex">two nice red and white striped cotton T-shirts</em><small class="uk">You don’t have to use all the categories together. / Не обов’язково використовувати всі категорії разом.</small></div>
+<div id="bHost"></div>
+</section>
+
+<section id="rule">
+<h2>all / both / neither / none / either</h2>
+<p>These words tell us <b>how many</b> things or people we mean.<small class="uk">Ці слова показують, скільки предметів чи людей ми маємо на увазі.</small></p>
+
+<h3 class="h">1. Meet the five words</h3>
+<div class="mx">
+<div></div><div class="mh">2 things<span>👕👕</span><small class="uk">двоє</small></div><div class="mh">3 or more<span>👕👕👕👕</span><small class="uk">троє і більше</small></div>
+<div class="mh">✅ Positive<small class="uk">ствердно</small></div>
+<div class="w pos"><b>both</b><small class="uk">обидва</small></div>
+<div class="w pos"><b>all</b><small class="uk">усі</small></div>
+<div class="mh">❌ Negative<small class="uk">заперечно</small></div>
+<div class="w neg"><b>neither</b><small class="uk">жоден із двох</small></div>
+<div class="w neg"><b>none</b><small class="uk">жоден із багатьох</small></div>
+</div>
+<div class="w eit"><b>either</b> = one or the other, I don’t mind which<small class="uk">будь-який із двох, мені все одно</small></div>
+
+<h3 class="h">2. Build a sentence</h3>
+<div class="steps">
+<div class="st"><i>1</i><b>Count</b><br>2 things, or 3 or more?<small class="uk">Двоє чи троє і більше?</small></div>
+<div class="st"><i>2</i><b>Think</b><br>Positive or negative?<small class="uk">Ствердно чи заперечно?</small></div>
+<div class="st"><i>3</i><b>Build</b><br>Use the pattern below.<small class="uk">Склади за схемою нижче.</small></div>
+</div>
+<div class="eq"><span class="k mix">both / all / neither / none</span>+<span class="o">of</span>+<span class="g">them</span>+<span class="v">verb</span></div>
+<small class="uk" style="text-align:center">слово + of + them + дієслово · them = ті речі, про які ми вже говорили</small>
+<div class="eq"><span class="g">them</span>→<span class="g">my jackets</span>→<span class="g">the hats</span></div>
+<small class="uk" style="text-align:center">Хочеш назвати речі? Заміни them: my jackets (мої куртки), the hats (ці шапки).</small>
+
+<h3 class="h">3. See it in sentences</h3>
+<p>Each card shows a <b>situation</b>, a <b>sentence</b> and <b>why</b> we use this word.<small class="uk">Кожна картка: ситуація, речення і чому саме це слово.</small></p>
+<div class="legend"><span class="k pos">quantity word</span><span class="o">of</span><span class="g">the group</span><span class="v">verb</span></div>
+<h4 class="wh pos">both</h4>
+<div class="ec pos"><div class="pic">👕👕</div><div><div class="sit">I bought two T-shirts.</div><div class="sen"><span class="k pos">Both</span> <span class="o">of</span> <span class="g">them</span> <span class="v">are</span> cotton.</div><small class="uk">Я купив(-ла) дві футболки. Обидві бавовняні.</small><div class="why">✅ 2 things + positive → both</div></div></div>
+<div class="ec pos"><div class="pic">🧥🧥</div><div><div class="sit">I have two jackets.</div><div class="sen"><span class="k pos">Both</span> <span class="o">of</span> <span class="g">my jackets</span> <span class="v">are</span> leather.</div><small class="uk">У мене дві куртки. Обидві шкіряні.</small><div class="why">✅ 2 things + positive → both</div></div></div>
+<h4 class="wh pos">all</h4>
+<div class="ec pos"><div class="pic">🧢🧢🧢🧢</div><div><div class="sit">There are four hats.</div><div class="sen"><span class="k pos">All</span> <span class="o">of</span> <span class="g">them</span> <span class="v">are</span> woollen.</div><small class="uk">Є чотири шапки. Усі вовняні.</small><div class="why">✅ 3 or more + positive → all</div></div></div>
+<div class="ec pos"><div class="pic">👟👟👟👟👟</div><div><div class="sit">I have five pairs of shoes.</div><div class="sen"><span class="k pos">All</span> <span class="o">of</span> <span class="g">my shoes</span> <span class="v">are</span> new.</div><small class="uk">У мене п’ять пар взуття. Усе нове.</small><div class="why">✅ 3 or more + positive → all</div></div></div>
+<h4 class="wh neg">neither</h4>
+<div class="ec neg"><div class="pic">🧥🧥❌</div><div><div class="sit">I tried on two jackets. Not one was my size.</div><div class="sen"><span class="k neg">Neither</span> <span class="o">of</span> <span class="g">them</span> <span class="v">fits</span> me.</div><small class="uk">Я приміряв(-ла) дві куртки. Жодна не підійшла.</small><div class="why">❌ 2 things + not one → neither</div></div></div>
+<div class="ec neg"><div class="pic">🧢🧢❌</div><div><div class="sit">Look at these two hats.</div><div class="sen"><span class="k neg">Neither</span> <span class="o">of</span> <span class="g">the hats</span> <span class="v">is</span> woollen.</div><small class="uk">Подивись на ці дві шапки. Жодна не вовняна.</small><div class="why">❌ 2 things + not one → neither</div></div></div>
+<h4 class="wh neg">none</h4>
+<div class="ec neg"><div class="pic">👖👖👖👖❌</div><div><div class="sit">I tried on ten pairs of jeans.</div><div class="sen"><span class="k neg">None</span> <span class="o">of</span> <span class="g">them</span> <span class="v">fit</span> me.</div><small class="uk">Я приміряв(-ла) десять джинсів. Жодні не підійшли.</small><div class="why">❌ 3 or more + not one → none</div></div></div>
+<div class="ec neg"><div class="pic">👟👟👟👟❌</div><div><div class="sit">We looked at all the shoes in the shop.</div><div class="sen"><span class="k neg">None</span> <span class="o">of</span> <span class="g">the shoes</span> <span class="v">are</span> my style.</div><small class="uk">Ми дивились усе взуття в магазині. Жодне не мій стиль.</small><div class="why">❌ 3 or more + not one → none</div></div></div>
+<h4 class="wh eit">either</h4>
+<div class="ec eit"><div class="pic">🧣🧣</div><div><div class="sit">A red scarf or a green scarf? I don’t like them.</div><div class="sen">I don’t like <span class="k eit">either</span> <span class="o">of</span> <span class="g">them</span>.</div><small class="uk">Червоний шарф чи зелений? Мені не подобається жоден.</small><div class="why">↔ 2 things + “not” → either</div></div></div>
+<div class="ec eit"><div class="pic">👕👕</div><div><div class="sit">You can wear the blue shirt or the white one.</div><div class="sen">You can wear <span class="k eit">either</span> <span class="g">shirt</span>.</div><small class="uk">Можеш одягнути будь-яку сорочку (синю або білу).</small><div class="why">↔ 2 things, you can choose → either</div></div></div>
+
+
+<div class="rule tip"><b>💡 Tips</b><small class="uk">Поради</small>
+• <b>Verbs:</b> <i>all / both / none of</i> → <b>are</b>. <i>neither of</i> → <b>is</b>.<small class="uk">Дієслова: після all, both, none of — are; після neither of — is.</small>
+• <b>Short way:</b> <i>both jackets, all shops</i> (no <i>of</i> if you only say the noun). <i>neither</i> and <i>none</i> keep <i>of</i>.<small class="uk">Коротко: з both і all без of, якщо є лише іменник. З neither і none of лишається.</small></div>
+
+<div class="rule warn"><b>⚠️ Don’t say “not” twice!</b><small class="uk">Не став заперечення двічі!</small>
+<i>neither</i> and <i>none</i> already mean “not”.<small class="uk">neither і none вже мають значення «не».</small>
+✅ <em class="ex">Neither of them fits me.</em> ❌ <em class="ex">Neither of them doesn’t fit me.</em><br>
+<i>either</i> needs “not”: <em class="ex">I didn’t buy either.</em> = <em class="ex">I bought neither.</em><small class="uk">either потребує «not».</small></div>
+</section>
+
+<section id="g1">
+<h2>Practice A: choose the word ✅</h2>
+<p class="sub">Pick the correct option.</p>
+<div id="qHost"></div>
+<div class="bar"><span id="qScore"></span><button class="btn alt" id="qReset">Restart</button></div>
+</section>
+
+<section id="g2">
+<h2>Practice B: write the word ✍️</h2>
+<p class="sub">Type <b>all, both, neither, none</b> or <b>either</b>. Tap 💡 for a hint.</p>
+<div id="fHost"></div>
+<div class="bar"><span id="fScore"></span><button class="btn" id="fCheck">Check</button></div>
+</section>
+</main>
+<script>
+const $=s=>document.querySelector(s);
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+$('#nav').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+document.querySelectorAll('nav button,section').forEach(x=>x.classList.remove('on'));b.classList.add('on');$('#'+b.dataset.t).classList.add('on')});
+
+/* ---------- Crossword ---------- */
+const W=[
+{w:'LEATHER',r:3,c:0,d:'a',cl:'Jackets can be made of this animal skin.',uk:'шкіра'},
+{w:'TIGHT',r:1,c:6,d:'a',cl:'Jeans that fit close to your legs.',uk:'вузькі'},
+{w:'DENIM',r:8,c:4,d:'a',cl:'The material of blue jeans.',uk:'джинсова тканина'},
+{w:'SPOTTED',r:-2,c:10,d:'d',cl:'Trainers with dots: ___ trainers.',uk:'у горошок'},
+{w:'FLARED',r:2,c:0,d:'d',cl:'Jeans that get wider at the bottom.',uk:'розкльошені'},
+{w:'BAGGY',r:2,c:2,d:'d',cl:'Very loose and big: ___ jeans.',uk:'мішкуваті'},
+{w:'CHECKED',r:2,c:4,d:'d',cl:'A shirt with a pattern of squares.',uk:'картата'},
+{w:'TORN',r:1,c:6,d:'d',cl:'Jeans with holes in them.',uk:'порвані'},
+{w:'SILK',r:7,c:7,d:'d',cl:'A soft, shiny material for scarves.',uk:'шовк'}];
+const CY='йцукенгшщзфівапролдячсмитьЙЦУКЕНГШЩЗФІВАПРОЛДЯЧСМИТЬ',LT='qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
+const toLat=ch=>{const i=CY.indexOf(ch);return i>=0?LT[i]:(/[a-zA-Z]/.test(ch)?ch:'')};
+const minR=Math.min(...W.map(x=>x.r)),cells={};let maxR=0,maxC=0;
+W.forEach((x,i)=>{x.k=[];for(let j=0;j<x.w.length;j++){const r=x.r-minR+(x.d=='d'?j:0),c=x.c+(x.d=='a'?j:0);const k=r+','+c;
+(cells[k]=cells[k]||{r,c,ch:x.w[j],ws:[]}).ws.push(i);x.k.push(k);maxR=Math.max(maxR,r);maxC=Math.max(maxC,c)}});
+let n=0;const nums={};[...W].sort((a,b)=>(a.r-b.r)||(a.c-b.c)).forEach(x=>{const k=x.k[0];if(!nums[k])nums[k]=++n;x.n=nums[k]});
+const xw=$('#xw');xw.style.gridTemplateColumns=`repeat(${maxC+1},1fr)`;
+let aw=0,ak=null;
+for(let r=0;r<=maxR;r++)for(let c=0;c<=maxC;c++){const k=r+','+c,d=document.createElement('div');d.className='cell';const cell=cells[k];
+if(cell){d.innerHTML=(nums[k]?`<b>${nums[k]}</b>`:'')+'<input maxlength="2" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false" aria-label="square">';const inp=cell.inp=d.querySelector('input');
+inp.onclick=()=>{if(k===ak&&cell.ws.length>1)aw=cell.ws.find(i=>i!==aw);else if(!cell.ws.includes(aw))aw=cell.ws[0];ak=k;paint()};
+inp.onfocus=()=>{if(ak!==k){if(!cell.ws.includes(aw))aw=cell.ws[0];ak=k;paint()}};
+inp.oninput=()=>{const v=toLat((inp.value.match(/[a-zA-Zа-яіїєґА-ЯІЇЄҐ]/g)||[]).pop()||'');inp.value=v.toUpperCase();inp.classList.remove('ok','bad');
+if(v){const w=W[aw],i=w.k.indexOf(k);if(i>=0&&i<w.k.length-1)cells[w.k[i+1]].inp.focus()}paint()};
+inp.onkeydown=e=>{const w=W[aw],i=w.k.indexOf(k);
+if(e.key=='Backspace'&&!inp.value&&i>0){const p=cells[w.k[i-1]].inp;p.value='';p.focus();e.preventDefault();paint()}
+const dv={ArrowLeft:[0,-1],ArrowRight:[0,1],ArrowUp:[-1,0],ArrowDown:[1,0]}[e.key];
+if(dv){const t=cells[(cell.r+dv[0])+','+(cell.c+dv[1])];if(t){t.inp.focus();e.preventDefault()}}}}
+xw.appendChild(d)}
+W.forEach((x,i)=>{const li=document.createElement('li');li.innerHTML=`<span class="cl"><b>${x.n}.</b> ${x.cl}</span> <small class="uk">${x.uk} · ${x.w.length} letters</small>`;
+li.onclick=()=>{aw=i;const k=x.k.find(k=>!cells[k].inp.value)||x.k[0];cells[k].inp.focus();ak=k;paint()};x.li=li;$(x.d=='a'?'#cA':'#cD').appendChild(li)});
+function paint(){Object.entries(cells).forEach(([k,c])=>{c.inp.classList.toggle('hl',W[aw].k.includes(k));c.inp.classList.toggle('cur',k===ak)});
+let done=0;W.forEach((x,i)=>{x.li.classList.toggle('act',i===aw);const ok=x.k.every(k=>cells[k].inp.value===cells[k].ch);x.li.classList.toggle('done',ok);if(ok)done++});
+$('#xInfo').textContent=`Words: ${done}/${W.length}`+(done==W.length?' 🎉 Brilliant!':'')}
+$('#xCheck').onclick=()=>{Object.values(cells).forEach(c=>{const v=c.inp.value;c.inp.classList.remove('ok','bad');if(v)c.inp.classList.add(v===c.ch?'ok':'bad')})};
+$('#xHint').onclick=()=>{const c=cells[ak]&&!cells[ak].inp.value?cells[ak]:Object.values(cells).find(c=>!c.inp.value);if(c){c.inp.value=c.ch;c.inp.classList.add('ok');paint()}};
+paint();
+
+/* ---------- Shop builder ---------- */
+const UK={striped:'смугастий',checked:'картатий',spotted:'у горошок',silk:'шовковий',cotton:'бавовняний',denim:'джинсовий',woollen:'вовняний',leather:'шкіряний',scarf:'шарф',hat:'шапка',jackets:'куртки',shirts:'сорочки',shirt:'сорочка'};
+const bItems=[["👕","two nice red striped cotton T-shirts"],["👔","a cool blue checked cotton shirt"],["🧣","a beautiful purple silk scarf"],["🧢","a warm woollen hat"],["🧥","two black leather jackets"],["🧣","a lovely green spotted silk scarf"],["👕","three nice blue denim shirts"]];
+let bi=0,bScore=0;
+function bRender(){const [em,ph]=bItems[bi],ans=ph.split(' '),host=$('#bHost');
+host.innerHTML=`<div class="shop"><span class="em">${em}</span>Customer: “I’d like <b>…</b>, please.”</div><div class="chips"></div><div class="build" aria-live="polite"></div><div class="fb"></div><div class="bar"><span>Item ${bi+1}/${bItems.length} · Score: ${bScore}</span><span><button class="btn alt" id="bClr">Clear</button> <button class="btn" id="bChk">Check</button></span></div>`;
+const chips=host.querySelector('.chips'),box=host.querySelector('.build'),fb=host.querySelector('.fb');let cur=[];
+const mk=w=>{const c=document.createElement('button');c.className='chip';c.innerHTML=w+(UK[w]?`<small class="uk">${UK[w]}</small>`:'');return c};
+shuffle(ans).forEach(w=>{const c=mk(w);c.onclick=()=>{c.classList.add('used');cur.push({w,c});draw()};chips.appendChild(c)});
+function draw(){box.className='build';fb.textContent='';box.innerHTML='';cur.forEach((x,i)=>{const s=mk(x.w);s.title='Remove';s.onclick=()=>{x.c.classList.remove('used');cur.splice(i,1);draw()};box.appendChild(s)})}
+host.querySelector('#bClr').onclick=()=>{chips.querySelectorAll('.chip').forEach(c=>c.classList.remove('used'));cur=[];draw()};
+host.querySelector('#bChk').onclick=()=>{const ok=cur.length==ans.length&&cur.every((x,i)=>x.w===ans[i]);box.className='build '+(ok?'ok':'bad');
+if(ok){bScore++;fb.className='fb ok';fb.innerHTML=`✅ “I’d like ${ph}, please.” <button class="btn" id="bNext">${bi<bItems.length-1?'Next':'Finish'}</button>`;
+host.querySelector('#bNext').onclick=()=>{if(bi<bItems.length-1){bi++;bRender()}else{host.innerHTML=`<h2>🎉 Well done!</h2><p>Score: ${bScore}/${bItems.length}</p><button class="btn" id="bAgain">Play again</button>`;host.querySelector('#bAgain').onclick=()=>{bi=0;bScore=0;bRender()}}}}
+else{fb.className='fb bad';fb.textContent='Not yet. Remember: number → opinion → colour → design → material → noun.'}}}
+bRender();
+
+/* ---------- Practice A ---------- */
+const qa=[
+["I have two sisters. ___ of them live in Kyiv.","Both|All|Either",0,"Two sisters, positive → both."],
+["There were ten hats in the shop, but ___ of them was my size.","both|none|all",1,"Ten hats, not one was right → none."],
+["I tried on two jackets. ___ of them fitted me, so I didn’t buy anything.","Both|Neither|None",1,"Two jackets, not one fitted → neither."],
+["We went to three shops. ___ of them were open.","All|Both|Either",0,"Three shops, every one → all."],
+["I don’t like the red scarf or the green one. I don’t want ___.","both|neither|either",2,"After a negative verb we use either."],
+["___ of the two T-shirts is cotton. They’re both polyester.","Neither|None|Both",0,"Two T-shirts, not one → neither."],
+["Anna bought three dresses. ___ of them are silk.","None|Neither|Either",0,"Three dresses, not one → none."],
+["Do you want the black or the white trainers? — I don’t mind. ___ pair is fine.","Both|Either|Neither",1,"One or the other, it doesn’t matter → either."]];
+function qRender(){let qs=0;const h=$('#qHost');h.innerHTML='';
+qa.forEach(([t,o,c,e],i)=>{const d=document.createElement('div');d.className='q';
+d.innerHTML=`<div class="t">${i+1}. ${t.replace('___','<b>_____</b>')}</div><div class="opts"></div><div class="fb"></div>`;
+const ob=d.querySelector('.opts'),fb=d.querySelector('.fb');let done=false;
+o.split('|').forEach((w,k)=>{const b=document.createElement('button');b.className='tile';b.textContent=w;
+b.onclick=()=>{if(done)return;if(k==c){done=true;b.classList.add('done');fb.className='fb ok';fb.textContent='✅ '+e;qs++}
+else{b.classList.add('no');fb.className='fb bad';fb.textContent='Try again.'}
+$('#qScore').textContent=`Correct: ${qs}/${qa.length}`+(qs==qa.length?' 🎉':'')};ob.appendChild(b)});h.appendChild(d)});
+$('#qScore').textContent=`Correct: 0/${qa.length}`}
+$('#qReset').onclick=qRender;qRender();
+
+/* ---------- Practice B ---------- */
+const fa=[
+["I love these two jumpers. I’m going to buy ___ of them.","both","Two jumpers, positive."],
+["She tried on five dresses, but ___ of them looked good.","none","Five dresses, not one."],
+["I can’t decide. I don’t like ___ of the two coats.","either","Negative verb, two coats."],
+["My parents work in fashion. ___ of them are designers.","both","Two people, positive."],
+["___ of the hundred T-shirts in the shop was my size.","none","A hundred, not one."],
+["I had two hats, but ___ of them fitted me.","neither","Two hats, not one fitted."],
+["Our wardrobe is full. ___ of my clothes are new!","all","Every single one."],
+["Which jeans do you prefer, the blue or the grey? — I don’t mind. ___ pair is fine.","either","One or the other."]];
+(function(){const h=$('#fHost');fa.forEach(([t,a,hint],i)=>{const d=document.createElement('div');d.className='q';
+d.innerHTML=`<div class="t">${i+1}. ${t.replace('___','<input class="gap" autocomplete="off" autocapitalize="off" aria-label="gap '+(i+1)+'">')} <button class="tile" style="padding:1px 8px" aria-label="hint">💡</button></div><div class="fb"></div>`;
+d.querySelector('button').onclick=()=>{const f=d.querySelector('.fb');f.className='fb';f.textContent='Hint: '+hint};h.appendChild(d)})})();
+$('#fCheck').onclick=()=>{let s=0;document.querySelectorAll('#fHost .q').forEach((d,i)=>{const inp=d.querySelector('input'),fb=d.querySelector('.fb'),v=inp.value.trim().toLowerCase();inp.classList.remove('ok','bad');
+if(v===fa[i][1]){inp.classList.add('ok');fb.className='fb ok';fb.textContent='✅ Correct';s++}
+else if(v){inp.classList.add('bad');fb.className='fb bad';fb.textContent='❌ Try again'}else fb.textContent=''});
+$('#fScore').textContent=`Correct: ${s}/${fa.length}`+(s==fa.length?' 🎉 Great job!':'')};
+</script>
+</body>
+</html>
